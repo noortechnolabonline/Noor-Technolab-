@@ -1,0 +1,5 @@
+# local editor / preview settings
+.claude/
+.vscode/
+.DS_Store
+Thumbs.db
