@@ -6,9 +6,8 @@ const SITE = {
   name: 'Noor Technolab',
   tagline: 'Innovation in Every Line',
   email: 'info@noortechnolab.com',
-  phone: '+91 00000 00000',
-  phoneLink: '+910000000000',
-  whatsapp: '910000000000',
+  phones: ['+91 91063 56449', '+91 79843 42874'],
+  whatsapp: '919106356449',
   address: 'Your office address, City, State, India',
   social: { linkedin: '#', instagram: '#', facebook: '#', x: '#', youtube: '#' }
 };
@@ -149,8 +148,8 @@ function renderFooter() {
         </div>
       </div>
       <div class="f-bot">
-        <span>${SITE.address} · <a href="tel:${SITE.phoneLink}">${SITE.phone}</a></span>
-        <nav><a href="#">Privacy Policy</a><a href="#">Terms &amp; Conditions</a></nav>
+        <span>${SITE.address} · ${SITE.phones.map(p => `<a href="tel:${p.replace(/\s/g, '')}">${p}</a>`).join(' · ')}</span>
+        <nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav>
         <span>&copy; ${year} ${SITE.name}. All rights reserved.</span>
       </div>
     </div>

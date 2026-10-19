@@ -626,3 +626,21 @@ button{font-family:inherit}
   .marquee.kw .cl{font-size:17px}
   .member .ph.initials{font-size:30px}
 }
+
+/* ---------- legal pages (privacy policy, terms) ---------- */
+.legal{max-width:880px}
+.legal h2{font-size:24px;font-weight:600;letter-spacing:-.4px;margin:40px 0 12px;color:#111}
+.legal p{color:#444;font-size:16.5px;line-height:1.75;margin-bottom:14px}
+.legal ul{margin:0 0 16px 22px;color:#444;font-size:16.5px;line-height:1.75}
+.legal li{margin-bottom:6px}
+.legal a{color:var(--blue);font-weight:500}
+.legal-contact{background:var(--sky2);border-radius:18px;padding:22px 26px;margin-top:10px}
+.legal-contact p{margin:0}
+.legal-links{margin-top:36px;padding-top:22px;border-top:1px solid var(--line)}
+.form .consent{grid-column:1/-1;font-size:13.5px;color:var(--muted);margin-top:-6px}
+.form .consent a{color:var(--blue);font-weight:500}
+@media (max-width:600px){
+  .legal h2{font-size:20px;margin-top:32px}
+  .legal p,.legal ul{font-size:15px}
+  .legal-contact{padding:18px}
+}
