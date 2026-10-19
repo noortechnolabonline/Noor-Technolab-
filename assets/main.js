@@ -5,7 +5,7 @@
 const SITE = {
   name: 'Noor Technolab',
   tagline: 'Innovation in Every Line',
-  email: 'info@noortechnolab.com',
+  email: 'info@noortechnolab.online',
   phones: ['+91 91063 56449', '+91 79843 42874'],
   whatsapp: '919106356449',
   address: 'Your office address, City, State, India',
@@ -95,7 +95,6 @@ function renderHeader() {
           <div class="dropdown">${ddItem('work.html','case','What We Build','Websites, apps, AI and marketing solutions.')}${ddItem('work.html#products','product','Products','Our own ready-to-use tools — coming soon.')}</div></div>
         <div class="nav-item${act('industries')}"><a href="industries.html">Industries <i class="chev"></i></a>
           <div class="dropdown wide">${indLinks}</div></div>
-        <div class="nav-item${act('blog')}"><a href="blog.html">Blog</a></div>
       </nav>
       <div class="nav-actions">
         <a href="contact.html#book" class="btn-outline">Book a Call</a>
@@ -111,7 +110,6 @@ function renderHeader() {
     <details><summary>Services</summary><a href="services.html">All Services</a>${SERVICES.map(s => `<a href="services.html#${s[0]}"><span class="mi">${ICONS[s[0]]}</span>${s[1]}</a>`).join('')}</details>
     <details><summary>Work</summary><a href="work.html">What We Build</a><a href="work.html#products">Products</a></details>
     <details><summary>Industries</summary>${INDUSTRIES.map(i => `<a href="industries.html#${i[0]}"><span class="mi">${ICONS[i[0]]}</span>${i[1]}</a>`).join('')}</details>
-    <a href="blog.html">Blog</a>
     <div class="m-cta"><a href="contact.html#book" class="btn-outline">Book a Call</a><a href="contact.html" class="btn plain">Contact</a></div>
   </nav>`;
   document.getElementById('site-header').outerHTML = header;
@@ -132,7 +130,7 @@ function renderFooter() {
     <div class="container">
       <div class="f-grid">
         <div class="f-brand">${logoHTML()}<h3>Building the Digital Future of Growing Businesses</h3><a href="contact.html" class="btn">Let's Talk <span class="ic">&#8599;</span></a></div>
-        <div class="links"><h5>Company</h5><a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">What We Build</a><a href="work.html#products">Products</a><a href="industries.html">Industries</a><a href="blog.html">Blog</a><a href="careers.html">Careers</a><a href="contact.html#book">Book a Call</a></div>
+        <div class="links"><h5>Company</h5><a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">What We Build</a><a href="work.html#products">Products</a><a href="industries.html">Industries</a><a href="careers.html">Careers</a><a href="contact.html#book">Book a Call</a></div>
         <div class="links"><h5>Services</h5>${SERVICES.map(s => `<a href="services.html#${s[0]}">${s[1]}</a>`).join('')}</div>
         <div class="links"><h5>Industries</h5><div class="f-ind">${INDUSTRIES.map(i => `<a href="industries.html#${i[0]}">${i[1]}</a>`).join('')}</div></div>
       </div>
