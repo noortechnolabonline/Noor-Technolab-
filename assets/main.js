@@ -136,17 +136,18 @@ function renderFooter() {
       </div>
       <div class="f-mid">
         <div class="f-badges">
-          <div><b>Free</b><small>Consultation</small></div>
-          <div><b>24h</b><small>Response</small></div>
-          <div><b>NDA</b><small>Protected</small></div>
+          <div><b>Free <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 5h16v11H9l-5 4z"/></svg></i></b><small>Consultation</small></div>
+          <div><b>24h <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20zm1 5v4.6l3.4 2-1 1.7L11 12.7V7z"/></svg></i></b><small>Response</small></div>
+          <div><b>NDA <i><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l9 3.4v6.2c0 5.4-3.8 9.4-9 10.4-5.2-1-9-5-9-10.4V5.4zm-1.2 13.6 6-6-1.4-1.4-4.6 4.6-2.2-2.2-1.4 1.4z"/></svg></i></b><small>Protected</small></div>
         </div>
-        <div>
+        <div class="f-contact">
           <a class="f-mail" href="mailto:${SITE.email}">${SITE.email}</a>
+          <div class="f-phones">${SITE.phones.map(p => `<a href="tel:${p.replace(/\s/g, '')}">${p}</a>`).join('<span>|</span>')}</div>
           <div class="social">${Object.entries(SITE.social).map(([k, v]) => `<a href="${v}" aria-label="${k}" target="_blank" rel="noopener">${SOCIAL_SVG[k]}</a>`).join('')}</div>
         </div>
       </div>
       <div class="f-bot">
-        <span>${SITE.address} · ${SITE.phones.map(p => `<a href="tel:${p.replace(/\s/g, '')}">${p}</a>`).join(' · ')}</span>
+        <span>${SITE.address}</span>
         <nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav>
         <span>&copy; ${year} ${SITE.name}. All rights reserved.</span>
       </div>

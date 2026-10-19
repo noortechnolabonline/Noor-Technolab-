@@ -644,3 +644,163 @@ button{font-family:inherit}
   .legal p,.legal ul{font-size:15px}
   .legal-contact{padding:18px}
 }
+
+/* =========================================================
+   Footer — matched to pavansgroup.com
+   ========================================================= */
+.site-footer{background:#101010;color:#c9c9c9;padding:70px 0 0}
+.f-grid{grid-template-columns:minmax(260px,1.45fr) minmax(130px,.7fr) minmax(200px,1fr) minmax(400px,1.6fr);gap:40px;padding-bottom:60px}
+.f-brand .logo{margin-bottom:26px}
+.f-brand h3{color:#fff;font-size:24px;font-weight:600;line-height:1.4;letter-spacing:-.3px;max-width:300px;margin-bottom:28px}
+.f-brand .btn{font-size:17px;min-height:48px}
+.site-footer h5{color:#fff;font-size:16px;font-weight:600;margin-bottom:18px;letter-spacing:.1px}
+.site-footer .links a{display:block;color:#fff;opacity:.85;font-size:16px;line-height:24px;padding:6px 0;transition:color .2s,opacity .2s}
+.site-footer .links a:hover{color:var(--blue);opacity:1}
+.f-ind{display:grid;grid-template-columns:1fr 1fr;column-gap:22px}
+.f-ind a{white-space:nowrap}
+
+.f-mid{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap;padding:40px 0;border-top:1px solid #222}
+.f-badges{display:flex;gap:30px;flex-wrap:wrap}
+.f-badges div{width:163px;height:108px;border:1px solid #262626;background:#161616;border-radius:16px;padding:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2px;text-align:center;color:#fff;transition:border-color .3s,transform .3s}
+.f-badges div:hover{border-color:var(--blue);transform:translateY(-3px)}
+.f-badges i{color:var(--blue);display:grid;place-items:center;margin-bottom:4px}
+.f-badges i svg{width:22px;height:22px}
+.f-badges b{display:block;font-size:22px;font-weight:600;line-height:1.2}
+.f-badges small{color:#aaa;font-size:13px}
+
+.f-contact{text-align:right}
+.f-mail{color:#fff;font-size:30px;font-weight:600;letter-spacing:-.4px;display:inline-block;margin-bottom:8px;text-align:right}
+.f-phones{display:flex;justify-content:flex-end;align-items:center;gap:10px;font-size:15px;margin-bottom:18px}
+.f-phones a{color:#c9c9c9}
+.f-phones a:hover,.f-mail:hover{color:var(--blue)}
+.f-phones span{color:#444}
+.social{display:flex;gap:16px;justify-content:flex-end}
+.social a{width:52px;height:52px;border-radius:50%;background:transparent;border:1px solid #2e2e2e;display:grid;place-items:center;color:#fff}
+.social a:hover{background:var(--blue);border-color:var(--blue)}
+.social svg{width:18px;height:18px}
+
+.f-bot{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px 30px;border-top:1px solid #222;padding:24px 0;font-size:14px;color:#c9c9c9}
+.f-bot nav{display:flex;gap:20px}
+.f-bot a{color:#c9c9c9}
+.f-bot a:hover{color:var(--blue)}
+
+/* footer — laptop/tablet */
+@media (max-width:1280px){
+  .f-grid{grid-template-columns:1fr 1fr 1fr;gap:40px 30px}
+  .f-brand{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px}
+  .f-brand .logo,.f-brand h3{margin-bottom:0}
+  .f-brand h3{max-width:none}
+}
+@media (max-width:991px){
+  .f-grid{grid-template-columns:1fr 1fr}
+  .f-grid > .links:last-child{grid-column:1/-1}
+  .f-brand{display:block}
+  .f-brand .logo{margin-bottom:20px}
+  .f-brand h3{margin-bottom:22px}
+  .f-mid{flex-direction:column;align-items:flex-start}
+  .f-contact{text-align:left}
+  .f-phones,.social{justify-content:flex-start}
+  .f-mail{text-align:left}
+}
+/* footer — phone */
+@media (max-width:600px){
+  .site-footer{padding:56px 0 0}
+  .f-grid{grid-template-columns:1fr 1fr;gap:34px 20px;padding-bottom:40px}
+  .f-brand h3{font-size:21px}
+  .site-footer h5{font-size:15px;margin-bottom:12px}
+  .site-footer .links a{font-size:14.5px;line-height:22px;padding:5px 0}
+  .f-ind{column-gap:14px}
+  .f-ind a{white-space:normal}
+  .f-mid{padding:32px 0;gap:26px}
+  .f-badges{gap:10px;width:100%;flex-wrap:nowrap}
+  .f-badges div{width:auto;flex:1 1 0;min-width:0;height:92px}
+  .f-badges b{font-size:18px}
+  .f-badges small{font-size:11.5px}
+  .f-mail{font-size:21px}
+  .f-phones{font-size:14px;flex-wrap:wrap}
+  .social{gap:10px}
+  .social a{width:44px;height:44px}
+  .f-bot{flex-direction:column;align-items:flex-start;gap:10px;font-size:13px;padding:20px 0 90px}
+}
+
+/* very small phones (≤360px): keep logo, Contact and menu on one line */
+@media (max-width:360px){
+  .site-header .bar{padding:6px 12px;gap:10px}
+  .logo-mark{width:32px;height:32px}
+  .logo-text b{font-size:15px}
+  .logo-text small{display:none}
+  .nav-actions .btn{padding:6px 12px;font-size:12px}
+  .burger{width:34px;height:34px}
+  .f-mail{font-size:18px}
+}
+
+/* ---------- footer v2: closer match to the Pavans footer screenshot ---------- */
+.site-footer{padding:56px 0 0}
+/* column positions: brand ≈30%, company ≈12%, services ≈20%, industries ≈38% */
+.f-grid{grid-template-columns:29.6% 11.8% 20.2% 38.4%;gap:0;padding-bottom:50px}
+.f-grid > .links{padding-right:20px}
+.f-brand .logo{gap:12px;margin-bottom:30px}
+.f-brand .logo-mark{width:56px;height:56px}
+.f-brand .logo-text{max-width:none}
+.f-brand .logo-text b{font-size:28px;letter-spacing:-.4px}
+.f-brand .logo-text small{font-size:13px;color:#ddd}
+.f-brand h3{font-size:24px;line-height:1.5;max-width:320px;margin-bottom:26px}
+.site-footer h5{font-size:16px;margin-bottom:20px}
+.site-footer .links a{opacity:1;color:#fff;padding:6px 0;line-height:24px}
+.f-ind{grid-template-columns:1fr 1fr;column-gap:20px}
+
+.f-mid{padding:48px 0}
+.f-badges{gap:32px}
+.f-badges div{width:163px;height:108px;background:#1e1e1e;border:0;border-radius:16px;gap:4px}
+.f-badges div:hover{background:#262626;transform:translateY(-3px)}
+.f-badges b{display:flex;align-items:center;gap:6px;font-size:24px;font-weight:400;line-height:1}
+.f-badges b i{color:#ffb800;display:inline-grid;margin:0}
+.f-badges b i svg{width:18px;height:18px}
+.f-badges small{color:#fff;font-size:20px;font-weight:600;letter-spacing:-.3px}
+
+.f-mail{font-size:30px;margin-bottom:6px}
+.f-phones{margin-bottom:22px}
+.social{gap:16px}
+.social a{width:56px;height:56px;border-radius:16px;background:#1e1e1e;border:0}
+.social a:hover{background:var(--blue)}
+.social svg{width:20px;height:20px}
+
+.f-bot{padding:26px 0}
+
+@media (max-width:1280px){
+  .f-grid{grid-template-columns:1fr 1fr 1fr;gap:40px 30px}
+}
+@media (max-width:991px){
+  .f-grid{grid-template-columns:1fr 1fr}
+}
+@media (max-width:600px){
+  .f-grid{gap:34px 20px;padding-bottom:40px}
+  .f-grid > .links{padding-right:0}
+  .f-brand .logo-mark{width:46px;height:46px}
+  .f-brand .logo-text b{font-size:23px}
+  .f-brand h3{font-size:20px}
+  .f-badges{gap:10px}
+  .f-badges div{height:88px}
+  .f-badges b{font-size:19px}
+  .f-badges small{font-size:14px}
+  .f-mail{font-size:21px}
+  .social{gap:10px}
+  .social a{width:46px;height:46px;border-radius:13px}
+}
+@media (max-width:360px){
+  .f-mail{font-size:18px}
+  .f-badges small{font-size:12.5px}
+}
+
+/* footer: columns never narrower than their longest link (desktop only) */
+@media (min-width:1281px){
+  .f-grid{grid-template-columns:29.6% minmax(max-content,11.8%) minmax(max-content,20.2%) minmax(0,1fr)}
+  .f-grid > .links{padding-right:28px}
+  .f-grid .links a{white-space:nowrap}
+}
+@media (min-width:1281px) and (max-width:1600px){
+  .f-grid{grid-template-columns:24% minmax(max-content,11.8%) minmax(max-content,20.2%) minmax(0,1fr)}
+  .f-grid > .links{padding-right:22px}
+  .f-ind{column-gap:16px}
+  .site-footer .links a{font-size:15px}
+}
