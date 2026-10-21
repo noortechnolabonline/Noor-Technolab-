@@ -73,7 +73,7 @@ const LOGO_SVG = `<svg class="logo-mark" viewBox="0 0 44 44" fill="none" aria-hi
   <path class="hex" d="M22 3l16.5 9.5v19L22 41 5.5 31.5v-19z" stroke="url(#lg)" stroke-width="2.6" stroke-linejoin="round"/>
   <path class="inner" d="M15 29V15l14 14V15" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>`;
-const logoHTML = () => `<a href="index.html" class="logo" aria-label="${SITE.name} home">${LOGO_SVG}<span class="logo-text"><b>${SITE.name}</b><small>${SITE.tagline}</small></span></a>`;
+const logoHTML = () => `<a href="/" class="logo" aria-label="${SITE.name} home">${LOGO_SVG}<span class="logo-text"><b>${SITE.name}</b><small>${SITE.tagline}</small></span></a>`;
 
 const ddItem = (href, icon, title, desc) =>
   `<a href="${href}"><span class="di">${ICONS[icon] || ICONS.ind}</span><span><span class="dt">${title}</span>${desc ? `<span class="dd">${desc}</span>` : ''}</span></a>`;
@@ -81,37 +81,37 @@ const ddItem = (href, icon, title, desc) =>
 function renderHeader() {
   const page = document.body.dataset.page || '';
   const act = p => (p === page ? ' active' : '');
-  const svcLinks = SERVICES.map(s => ddItem(`services.html#${s[0]}`, s[0], s[1], s[2])).join('');
-  const indLinks = INDUSTRIES.map(i => ddItem(`industries.html#${i[0]}`, i[0], i[1], i[2])).join('');
+  const svcLinks = SERVICES.map(s => ddItem(`/services#${s[0]}`, s[0], s[1], s[2])).join('');
+  const indLinks = INDUSTRIES.map(i => ddItem(`/industries#${i[0]}`, i[0], i[1], i[2])).join('');
   const header = `
   <header class="site-header" id="hdr">
     <div class="bar">
       ${logoHTML()}
       <nav class="main-nav" aria-label="Main">
-        <div class="nav-item${act('about')}"><a href="about.html">About <i class="chev"></i></a>
-          <div class="dropdown">${ddItem('about.html','about','About Us','Our story, mission and the team behind ' + SITE.name + '.')}${ddItem('careers.html','career','Careers','Explore open roles and grow your career with us.')}</div></div>
-        <div class="nav-item${act('services')}"><a href="services.html">Services <i class="chev"></i></a>
+        <div class="nav-item${act('about')}"><a href="/about">About <i class="chev"></i></a>
+          <div class="dropdown">${ddItem('/about','about','About Us','Our story, mission and the team behind ' + SITE.name + '.')}${ddItem('/careers','career','Careers','Explore open roles and grow your career with us.')}</div></div>
+        <div class="nav-item${act('services')}"><a href="/services">Services <i class="chev"></i></a>
           <div class="dropdown wide">${svcLinks}</div></div>
-        <div class="nav-item${act('work')}"><a href="work.html">Work <i class="chev"></i></a>
-          <div class="dropdown">${ddItem('work.html','case','What We Build','Websites, apps, AI and marketing solutions.')}${ddItem('work.html#products','product','Products','Our own ready-to-use tools — coming soon.')}</div></div>
-        <div class="nav-item${act('industries')}"><a href="industries.html">Industries <i class="chev"></i></a>
+        <div class="nav-item${act('work')}"><a href="/work">Work <i class="chev"></i></a>
+          <div class="dropdown">${ddItem('/work','case','What We Build','Websites, apps, AI and marketing solutions.')}${ddItem('/work#products','product','Products','Our own ready-to-use tools — coming soon.')}</div></div>
+        <div class="nav-item${act('industries')}"><a href="/industries">Industries <i class="chev"></i></a>
           <div class="dropdown wide">${indLinks}</div></div>
       </nav>
       <div class="nav-actions">
-        <a href="contact.html#book" class="btn-outline">Book a Call</a>
-        <a href="contact.html" class="btn plain">Contact</a>
+        <a href="/contact#book" class="btn-outline">Book a Call</a>
+        <a href="/contact" class="btn plain">Contact</a>
       </div>
       <button class="burger" id="openMenu" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </header>
   <nav class="m-menu" id="mMenu" aria-label="Mobile">
     <button class="close" id="closeMenu" aria-label="Close menu">&times;</button>
-    <a href="index.html">Home</a>
-    <details><summary>About</summary><a href="about.html">About Us</a><a href="careers.html">Careers</a></details>
-    <details><summary>Services</summary><a href="services.html">All Services</a>${SERVICES.map(s => `<a href="services.html#${s[0]}"><span class="mi">${ICONS[s[0]]}</span>${s[1]}</a>`).join('')}</details>
-    <details><summary>Work</summary><a href="work.html">What We Build</a><a href="work.html#products">Products</a></details>
-    <details><summary>Industries</summary>${INDUSTRIES.map(i => `<a href="industries.html#${i[0]}"><span class="mi">${ICONS[i[0]]}</span>${i[1]}</a>`).join('')}</details>
-    <div class="m-cta"><a href="contact.html#book" class="btn-outline">Book a Call</a><a href="contact.html" class="btn plain">Contact</a></div>
+    <a href="/">Home</a>
+    <details><summary>About</summary><a href="/about">About Us</a><a href="/careers">Careers</a></details>
+    <details><summary>Services</summary><a href="/services">All Services</a>${SERVICES.map(s => `<a href="/services#${s[0]}"><span class="mi">${ICONS[s[0]]}</span>${s[1]}</a>`).join('')}</details>
+    <details><summary>Work</summary><a href="/work">What We Build</a><a href="/work#products">Products</a></details>
+    <details><summary>Industries</summary>${INDUSTRIES.map(i => `<a href="/industries#${i[0]}"><span class="mi">${ICONS[i[0]]}</span>${i[1]}</a>`).join('')}</details>
+    <div class="m-cta"><a href="/contact#book" class="btn-outline">Book a Call</a><a href="/contact" class="btn plain">Contact</a></div>
   </nav>`;
   document.getElementById('site-header').outerHTML = header;
 }
@@ -130,10 +130,10 @@ function renderFooter() {
   <footer class="site-footer">
     <div class="container">
       <div class="f-grid">
-        <div class="f-brand">${logoHTML()}<h3>Building the Digital Future of Growing Businesses</h3><a href="contact.html" class="btn">Let's Talk <span class="ic">&#8599;</span></a></div>
-        <div class="links"><h5>Company</h5><a href="about.html">About</a><a href="services.html">Services</a><a href="work.html">What We Build</a><a href="work.html#products">Products</a><a href="industries.html">Industries</a><a href="careers.html">Careers</a><a href="contact.html#book">Book a Call</a></div>
-        <div class="links"><h5>Services</h5>${SERVICES.map(s => `<a href="services.html#${s[0]}">${s[1]}</a>`).join('')}</div>
-        <div class="links"><h5>Industries</h5><div class="f-ind">${INDUSTRIES.map(i => `<a href="industries.html#${i[0]}">${i[1]}</a>`).join('')}</div></div>
+        <div class="f-brand">${logoHTML()}<h3>Building the Digital Future of Growing Businesses</h3><a href="/contact" class="btn">Let's Talk <span class="ic">&#8599;</span></a></div>
+        <div class="links"><h5>Company</h5><a href="/about">About</a><a href="/services">Services</a><a href="/work">What We Build</a><a href="/work#products">Products</a><a href="/industries">Industries</a><a href="/careers">Careers</a><a href="/contact#book">Book a Call</a></div>
+        <div class="links"><h5>Services</h5>${SERVICES.map(s => `<a href="/services#${s[0]}">${s[1]}</a>`).join('')}</div>
+        <div class="links"><h5>Industries</h5><div class="f-ind">${INDUSTRIES.map(i => `<a href="/industries#${i[0]}">${i[1]}</a>`).join('')}</div></div>
       </div>
       <div class="f-mid">
         <div class="f-badges">
@@ -149,7 +149,7 @@ function renderFooter() {
       </div>
       <div class="f-bot">
         <span class="f-loc">${SITE.locations.join('<i>·</i>')}</span>
-        <nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav>
+        <nav><a href="/privacy-policy">Privacy Policy</a><a href="/terms">Terms &amp; Conditions</a></nav>
         <span>&copy; ${year} ${SITE.name}. All rights reserved.</span>
       </div>
     </div>
