@@ -8,7 +8,8 @@ const SITE = {
   email: 'info@noortechnolab.online',
   phones: ['+91 91063 56449', '+91 79843 42874'],
   whatsapp: '919106356449',
-  address: 'Your office address, City, State, India',
+  address: 'Anand, Gujarat, India',
+  locations: ['India', 'Canada', 'London'],
   social: { linkedin: '#', instagram: '#', facebook: '#', x: '#', youtube: '#' }
 };
 
@@ -147,7 +148,7 @@ function renderFooter() {
         </div>
       </div>
       <div class="f-bot">
-        <span>${SITE.address}</span>
+        <span class="f-loc">${SITE.locations.join('<i>·</i>')}</span>
         <nav><a href="privacy-policy.html">Privacy Policy</a><a href="terms.html">Terms &amp; Conditions</a></nav>
         <span>&copy; ${year} ${SITE.name}. All rights reserved.</span>
       </div>

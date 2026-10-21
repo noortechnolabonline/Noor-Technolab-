@@ -804,3 +804,41 @@ button{font-family:inherit}
   .f-ind{column-gap:16px}
   .site-footer .links a{font-size:15px}
 }
+
+/* Like Pavans: content stops widening at ~1500px on very large / zoomed-out screens */
+@media (min-width:1400px){
+  .container,.site-header:not(.scrolled) .bar{max-width:1500px}
+}
+/* footer columns: same proportions as the Pavans footer (company 30%, services 45%, industries 67%) */
+@media (min-width:1601px){
+  .f-grid{grid-template-columns:30.3% minmax(max-content,14.8%) minmax(max-content,21.5%) minmax(0,1fr)}
+  .f-grid > .links{padding-right:24px}
+  .f-ind{column-gap:18px}
+}
+
+/* footer fix: brand column wide enough for the logo; tagline on 2 lines (like Pavans) */
+.f-brand{min-width:0}
+.f-brand .logo{white-space:nowrap}
+@media (min-width:1281px){
+  .f-grid{grid-template-columns:minmax(max-content,30%) minmax(max-content,13%) minmax(max-content,20.5%) minmax(0,1fr)}
+  .f-brand{padding-right:40px}
+  .f-brand h3{max-width:340px}
+}
+@media (min-width:1281px) and (max-width:1600px){
+  .f-brand .logo-mark{width:50px;height:50px}
+  .f-brand .logo-text b{font-size:24px}
+  .f-brand .logo-text small{font-size:12px}
+  .f-brand h3{font-size:21px;max-width:300px}
+  .f-grid > .links{padding-right:18px}
+  .f-ind{column-gap:14px}
+  .site-footer .links a{font-size:14.5px}
+}
+/* 1281–1360px: too tight for 4 columns, use the stacked layout (brand row + 3 link columns) */
+@media (min-width:1281px) and (max-width:1360px){
+  .f-grid{grid-template-columns:1fr 1fr 1fr;gap:40px 30px}
+  .f-brand{grid-column:1/-1;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;padding-right:0}
+  .f-brand .logo,.f-brand h3{margin-bottom:0}
+  .f-brand h3{max-width:none}
+  .f-grid > .links{padding-right:0}
+}
+.f-loc i{font-style:normal;color:#555;margin:0 10px}
